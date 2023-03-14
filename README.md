@@ -4,24 +4,33 @@
 Please decompress "all-test-data.zip" and put the folder under the same directory with "parser_and_classifier_2.py". 
 
 The structure of <all-test-data> folder is as following: 
+
 /all-test-data 
+	
 	/trace
+		
 		(all worker trace json files here)
+		
 		(they start with "trace_worker...")
+	
 	/survey
+		
 		(all manager survey json files here)
+		
 		(they start with "surveyTrace_...")
 
 ## /models
 Please put the "models" folder under the same directory with "parser_and_classifier_2.py".
+
 The "models" folder includes 7 models:
-	* km_0.model to km_4.model is for kmeans clustering of feature[0] to feature[4];
-	* RF-origin.model is the random forest model trained by original data-label pairs;
-	* RF-1.model is the random forest model trained by optimized data-label pairs, the average accuracy in testing is usually 0.01-0.03 higher than RF-origin.model.
-	* RF-2.model: trained by 87 pilot data. max_depth=5, n_estimators=50; min_samples_leaf=4, max_features="log2".
+* km_0.model to km_4.model is for kmeans clustering of feature[0] to feature[4];
+* RF-origin.model is the random forest model trained by original data-label pairs;
+* RF-1.model is the random forest model trained by optimized data-label pairs, the average accuracy in testing is usually 0.01-0.03 higher than RF-origin.model.
+* RF-2.model: trained by 87 pilot data. max_depth=5, n_estimators=50; min_samples_leaf=4, max_features="log2".
 
 ## parser_and_classifier_2.py
 Predict by RF-1.model, generate json files.
+
 To run the "parser_and_classifier_2.py", use command:
 	$ python your-path/parser_and_classifier_2.py <path to test data> <path to output json>
 The 2 paramaters indicate the input/output file path.
