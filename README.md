@@ -36,10 +36,10 @@ To run the "parser_and_classifier_2.py", use command:
 	or:
 	$ python ./parser_and_classifier.py ./all-test-data -
 
-* <path to test data> is the father folder include trace and survey;
-* <path to output json> is the father folder that "features.json" and "output.json" will be stored in. Use "-" if you want the output jsons under the same folder of test data.
-*	"output.json" includes only results predicted by RF-1.model
-*	"features.json" includes both prediction results of RF-1.model and input features that extracted from json trace.
+* \<path to test data\> is the father folder include trace and survey;
+* \<path to output json\> is the father folder that "features.json" and "output.json" will be stored in. Use "-" if you want the output jsons under the same folder of test data.
+**	"output.json" includes only results predicted by RF-1.model
+**	"features.json" includes both prediction results of RF-1.model and input features that extracted from json trace.
 
 
 ## json2csv.py
