@@ -24,26 +24,28 @@ The "models" folder includes 7 models:
 * RF-1.model is the random forest model trained by optimized data-label pairs, the average accuracy in testing is usually 0.01-0.03 higher than RF-origin.model.
 * RF-2.model: trained by 87 pilot data. max_depth=5, n_estimators=50; min_samples_leaf=4, max_features="log2".
 
+	
 ## parser_and_classifier_2.py
 Predict by RF-1.model, generate json files.
 
 To run the "parser_and_classifier_2.py", use command:
+	
 	$ python your-path/parser_and_classifier_2.py <path to test data> <path to output json>
-The 2 paramaters indicate the input/output file path.
-	<path to test data> is the father folder include trace and survey;
-	<path to output json> is the father folder that "features.json" and "output.json" will be stored in. Use "-" if you want the output jsons under the same folder of test data.
-e.g. 
+	e.g. 
 	$ python ./parser_and_classifier.py ./all-test-data ./results
 	or:
 	$ python ./parser_and_classifier.py ./all-test-data -
 
-"output.json" includes only results predicted by RF-1.model
-"features.json" includes both prediction results of RF-1.model and input features that extracted from json trace.
+* <path to test data> is the father folder include trace and survey;
+* <path to output json> is the father folder that "features.json" and "output.json" will be stored in. Use "-" if you want the output jsons under the same folder of test data.
+*	"output.json" includes only results predicted by RF-1.model
+*	"features.json" includes both prediction results of RF-1.model and input features that extracted from json trace.
 
 
 ## json2csv.py
 Transfer from json to csv, aggregates ground truth.
 To run the "json2csv.py", use command:
+	
 	$ python ./json2csv.py <path to test data> <path to features.json> 
 If there's only 1 parameter, <path to features.json> will be the same with <path to test data> (make sure where the features.json is)
 e.g. 
