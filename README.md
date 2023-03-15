@@ -38,8 +38,8 @@ e.g.
 
 * \<path to test data\> is the father folder include trace and survey;
 * \<path to output json\> is the father folder that "features.json" and "output.json" will be stored in. Use "-" if you want the output jsons under the same folder of test data.
-	** "output.json" includes only results predicted by RF-1.model
-	** "features.json" includes both prediction results of RF-1.model and input features that extracted from json trace.
+- "output.json" includes only results predicted by RF-1.model
+- "features.json" includes both prediction results of RF-1.model and input features that extracted from json trace.
 
 
 ## json2csv.py
@@ -78,6 +78,7 @@ e.g.
 	$ python ./test_RF2.py ./results
 "test_RF2.py" will print test results and a png image of confusion matrix
 
+	
 ## Others information:
 * The formats of features are in the descriptions.pdf.
 * "RF_model2_test.ipynb" is the notebook of the training-testing process of RF-2
