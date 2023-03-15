@@ -31,15 +31,15 @@ Predict by RF-1.model, generate json files.
 To run the "parser_and_classifier_2.py", use command:
 	
 	$ python your-path/parser_and_classifier_2.py <path to test data> <path to output json>
-	e.g. 
+e.g. 
 	$ python ./parser_and_classifier.py ./all-test-data ./results
 	or:
 	$ python ./parser_and_classifier.py ./all-test-data -
 
 * \<path to test data\> is the father folder include trace and survey;
 * \<path to output json\> is the father folder that "features.json" and "output.json" will be stored in. Use "-" if you want the output jsons under the same folder of test data.
-**	"output.json" includes only results predicted by RF-1.model
-**	"features.json" includes both prediction results of RF-1.model and input features that extracted from json trace.
+	** "output.json" includes only results predicted by RF-1.model
+	** "features.json" includes both prediction results of RF-1.model and input features that extracted from json trace.
 
 
 ## json2csv.py
@@ -49,17 +49,21 @@ To run the "json2csv.py", use command:
 	$ python ./json2csv.py <path to test data> <path to features.json> 
 If there's only 1 parameter, <path to features.json> will be the same with <path to test data> (make sure where the features.json is)
 e.g. 
+	
 	$ python ./json2csv.py ./all-test-data ./results
 	or:
 	$ python ./json2csv.py ./all-test-data
+
 Then one file named "fea_m_compare.csv" will be generated under <path to features.json>, which aggregates input features, prediction results of RF-1.model, and human manager survey (ground truth).
 
 
 ## train_RF2.py
 Train a new Random Forests model (RF-2) by 20 features + results of RF-1.model
 To run the "train_RF2.py", use command:
+	
 	$ python ./train_RF2.py <path to fea_m_compare.csv>
 e.g.
+	
 	$ python ./train_RF2.py ./results
 "train_RF2.py" will generate a RF-2.model according to data in "fea_m_compare.csv", and you can replace the current RF-2 model by the new generated model. Be aware that RF-2 models trained by the same data can be slightly different due to randomness setting. 
 "train_RF2.py" will also generate a "fea_m_ai2.csv" file that added columns of prediction results by RF-2.model
@@ -67,8 +71,10 @@ e.g.
 ## test_RF2.py
 Test RF-2 by 10-folds cross validation and shuffle-repeat 50 times.
 To run the "test_RF2.py", use command:
+	
 	$ python ./test_RF2.py <path to fea_m_compare.csv>
 e.g.
+	
 	$ python ./test_RF2.py ./results
 "test_RF2.py" will print test results and a png image of confusion matrix
 
