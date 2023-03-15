@@ -38,8 +38,9 @@ e.g.
 
 * \<path to test data\> is the father folder include trace and survey;
 * \<path to output json\> is the father folder that "features.json" and "output.json" will be stored in. Use "-" if you want the output jsons under the same folder of test data.
-- "output.json" includes only results predicted by RF-1.model
-- "features.json" includes both prediction results of RF-1.model and input features that extracted from json trace.
+	
+	* "output.json" includes only results predicted by RF-1.model
+	* "features.json" includes both prediction results of RF-1.model and input features that extracted from json trace.
 
 
 ## json2csv.py
@@ -66,6 +67,7 @@ e.g.
 	
 	$ python ./train_RF2.py ./results
 "train_RF2.py" will generate a RF-2.model according to data in "fea_m_compare.csv", and you can replace the current RF-2 model by the new generated model. Be aware that RF-2 models trained by the same data can be slightly different due to randomness setting. 
+
 "train_RF2.py" will also generate a "fea_m_ai2.csv" file that added columns of prediction results by RF-2.model
 
 ## test_RF2.py
